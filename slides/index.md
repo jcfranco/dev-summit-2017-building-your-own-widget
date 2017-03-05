@@ -299,7 +299,7 @@ TBD
 
 # Use the source luke
 
-[GitHub Code](https://github.com/ArcGIS/presentations-devsummit-2017)
+[GitHub Code](https://github.com/jcfranco/devsummit-2016-building-widgets)
 
 <img src="images/source.gif" width="400">
 
