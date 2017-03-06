@@ -157,9 +157,11 @@ body {
   width: 100%;
 }
 .reveal code {
+  color: orange;
   font-family: monospace; }
 
 .reveal pre code {
+  color: #fff;
   display: block;
   padding: 10px;
   overflow: auto;
@@ -214,7 +216,7 @@ body {
  * LINKS
  *********************************************/
 .reveal a {
-  color: #21AEDB;
+  color: darkblue;
   text-decoration: none;
   -webkit-transition: color .15s ease;
   -moz-transition: color .15s ease;
