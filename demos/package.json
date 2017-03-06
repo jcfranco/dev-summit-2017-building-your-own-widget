@@ -4,9 +4,11 @@
   "private": true,
   "devDependencies": {
     "@types/arcgis-js-api": "^4.2.0",
+    "grunt": "^1.0.1",
+    "grunt-sass": "^2.0.0",
     "typescript": "^2.2.1"
   },
   "scripts": {
-    "postinstall": "tsc"
+    "postinstall": "tsc && grunt"
   }
 }
