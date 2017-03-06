@@ -39,10 +39,10 @@ export function buildMapCommands(featureNames: string | string[]): VoiceCommands
     }
 
     commands["hipster"] = (): void => {
-      const { head, body, createElement } = document;
-      const style = createElement('style');
+      const { head, body } = document;
+      const style = document.createElement("style");
 
-      style.type = 'text/css';
+      style.type = "text/css";
       style.innerHTML = `
       .hipster {
         margin: 0;
@@ -62,24 +62,31 @@ export function buildMapCommands(featureNames: string | string[]): VoiceCommands
       `;
       head.appendChild(style);
 
-      const image = createElement("img");
-
-      image.src = "https://pbs.twimg.com/profile_images/806946771536490497/5izwtbyK.jpg";
-      image.className = "hipster hidden";
-
-      body.appendChild(image);
-
       setTimeout(() => {
-        image.classList.remove("hidden");
+        const image = document.createElement("img");
+
+        image.src = "https://pbs.twimg.com/profile_images/806946771536490497/5izwtbyK.jpg";
+        image.className = "hipster hidden";
+
+        body.appendChild(image);
+
+        image.onload = () => {
+          setTimeout(() => {
+            image.classList.remove("hidden");
+          }, 100);
+
+          setTimeout(() => {
+            image.classList.add("hidden");
+          }, 1000);
+
+          setTimeout(() => {
+            body.removeChild(image);
+            head.removeChild(style);
+          }, 1500);
+        };
+
       }, 0);
 
-      setTimeout(() => {
-        image.classList.add("hidden");
-      }, 1000);
-
-      setTimeout(() => {
-        body.removeChild(image);
-      }, 1500);
     };
 
   });
