@@ -176,11 +176,19 @@ class Foo extends declared(Accessor) {
 
 ---
 
-# TypeScript Environment
+# TypeScript IDE Support
 
-- Visual Studio Code
-- IntelliJ IDEA/WebStorm
-- Text editor + command line
+- Visual Studio
+  - 2015/2013
+  - Code
+- WebStorm
+- Sublime Text
+- Atom
+- Eclipse
+- Emacs
+- Vim
+
+<img src="images/choices.gif" width="300">
 
 ---
 
