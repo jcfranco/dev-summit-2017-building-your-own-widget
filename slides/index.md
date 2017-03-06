@@ -206,7 +206,6 @@ class Foo extends declared(Accessor) {
 - Properties
 - Methods
 - Events
-- i18n
 
 ---
 
@@ -328,6 +327,7 @@ Build a widget!
 
 - collections
 - Accessibility
+- i18n
 
 <img src="images/tricks.gif" width="400">
 
