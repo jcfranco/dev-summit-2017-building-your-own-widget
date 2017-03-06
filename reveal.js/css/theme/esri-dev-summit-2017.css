@@ -158,9 +158,11 @@ body {
 }
 .reveal code {
   color: orange;
+  font-style: italic;
   font-family: monospace; }
 
 .reveal pre code {
+  font-style: normal;
   color: #fff;
   display: block;
   padding: 10px;
