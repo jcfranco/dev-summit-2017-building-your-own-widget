@@ -36,10 +36,71 @@
 
 # Prerequisites
 
-- TypeScript
 - Accessor
+- TypeScript
 
 <img src="images/holdup.gif" width="400">
+
+---
+
+## Accessor
+
+- JavaScript API Foundation
+- Consistent developer experience
+- TypeScript support
+
+---
+
+## Accessor - Unified Object Constructor
+
+```js
+var view = new MapView({
+  container: "viewDiv",
+  map: map
+});
+
+var symbol = new SimpleMarkerSymbol({
+  style: "square",
+  color: "blue"
+});
+
+var widget = new BasemapToggle({
+  view: view,
+  nextBasemap: "hybrid"
+});
+```
+
+---
+
+## Accessor - Defining Properties (getters + setters)
+
+```js
+var Foo = Accessor.createSubclass({
+  properties: {
+
+    // read-only
+    foo: { readOnly: true, value: new Foo() },
+
+    // aliased
+    bar: { aliasOf: "foo" },
+
+    // autocast
+    baz: { type: SomeClass }
+  }
+});
+```
+
+---
+
+## Accessor - Property watching
+
+```js
+// watch for changes using a property chain
+view.watch("map.basemap.title", handleTitleChange);
+
+// watch for changes to multiple properties
+view.watch("stationary, interacting", handleViewPropChange);
+```
 
 ---
 
@@ -48,30 +109,69 @@
 - Superset of JavaScript
 - Compiled to JavaScript
 - Statically type-checked
+- Syntactic sugar... sweet!
+  - Use ES6 syntax while targeting ES5 environments
+
+<img src="images/typescript.png" width="250">
 
 ---
 
-# TypeScript
+# TS = type safety
 
-## Type safety
-
-```
-view: MapView | SceneView;
+```ts
+let view: MapView | SceneView;
 
 // ...
 
-view = "not-a-view"; //TS2322: Type '"not-a-view"' is not assignable to type 'MapView | SceneView'.
+/*
+ * TS2322: Type '"not-a-view"' is not assignable
+ * to type 'MapView | SceneView'.
+ */
+view = "not-a-view";
+```
+
+<img src="images/blocked.gif" width="350">
+
+---
+
+# Typings!
+
+Help describe what things are:
+
+```ts
+type PresenterNames = "Alan" | "Matt" | "JC";
+
+interface Person {
+  name: string;
+  age: number;
+}
+
+interface Presenter extends Person {
+  name: PresenterNames;
+}
 ```
 
 ---
 
-# TypeScript
+# Decorators!
 
-## Decorators
+- Enhance classes, properties, methods, parameters
 
-```
-@property()
-view: View;
+```ts
+class Foo extends declared(Accessor) {
+
+  // read-only
+  @property({ readOnly: true })
+  foo = new Foo();
+
+  // aliased
+  @property({ aliasOf: "foo" })
+  bar;
+
+  // autocast
+  @property({ type: SomeClass })
+  baz;
+}
 ```
 
 ---
@@ -88,50 +188,6 @@ view: View;
 
 - Set up TS
 - JavaScript API typings
-
----
-
-# Accessor
-
-- Foundation for JavaScript API
-
----
-
-# Accessor
-
-## Unified constructor
-
-```ts
-view = new View({
-  // ... properties are set on instance
-});
-```
-
----
-
-# Accessor
-
-## Getters/Setters
-
-```ts
-console.log(view.map);
-```
-
-```ts
-view.map = someMap;
-```
-
----
-
-# Accessor
-
-## Watch properties
-
-```ts
-view.watch("size", function (newValue, oldValue, propName, target) {
-  // ...
-})
-```
 
 ---
 
@@ -156,8 +212,10 @@ view.watch("size", function (newValue, oldValue, propName, target) {
 
 # Framework: About
 
-- ~~dijit/_WidgetBase~~
-- TypeScript
+`esri/widgets/Widget`: Our new widget framework
+
+- Accessor-based
+- Built with TypeScript
 
 <img src="images/about.gif" width="400">
 
