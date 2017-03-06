@@ -1,0 +1,12 @@
+{
+  "name": "building-your-own-widget-demos",
+  "version": "1.0.0",
+  "private": true,
+  "devDependencies": {
+    "@types/arcgis-js-api": "^4.2.0",
+    "typescript": "^2.2.1"
+  },
+  "scripts": {
+    "postinstall": "tsc"
+  }
+}
