@@ -326,18 +326,9 @@ Build a widget!
 
 # Tips & Tricks
 
-- CSS class object
 - collections
-- handleRegistry
-- accessibleHandler
 
 <img src="images/tricks.gif" width="400">
-
----
-
-# Tips & Tricks: TBD
-
-TBD
 
 ---
 
@@ -379,6 +370,8 @@ TBD
 <img src="images/questions.gif" width="400">
 
 ---
+
+# Thank you!
 
 ![Thank you!](images/thanks.gif)
 
