@@ -348,7 +348,7 @@ Build a widget!
 
 # Use the source luke
 
-[GitHub Code](https://github.com/jcfranco/devsummit-2016-building-widgets)
+## [esriurl.com/buildwidgets2017](http://esriurl.com/buildwidgets2017)
 
 <img src="images/source.gif" width="400">
 
