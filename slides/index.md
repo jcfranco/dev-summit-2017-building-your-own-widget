@@ -258,38 +258,34 @@ class Foo extends declared(Accessor) {
 
 # Framework: ViewModels
 
-TBD
+todo: matt
 
 ---
 
 # Framework: Views
 
-TBD
+todo: matt
 
 ---
 
 # Framework: Methods
 
-TBD
+todo: matt
 
 ---
 
 # Framework: Events
 
-TBD
-
----
-
-# Framework: i18n
-
-TBD
+todo: matt
 
 ---
 
 # Theming
 
-- Out of the box
+- How to style widgets
+- Out of the box themes
 - SASS
+- BEM
 
 <img src="images/theming.gif" width="400">
 
@@ -297,7 +293,8 @@ TBD
 
 # Theming: Out of the box
 
-TBD
+todo: matt
+[Styles](https://developers.arcgis.com/javascript/latest/guide/styling/index.html)
 
 <img src="images/outofbox.gif" width="300">
 
@@ -305,13 +302,13 @@ TBD
 
 # Theming: SASS
 
-TBD
+todo: matt
 
 ---
 
 # Theming: BEM
 
-TBD
+todo: matt
 
 ---
 

@@ -20,7 +20,7 @@
   - Sass
   - BEM
 - Build Widget (Matt - index/sass)(JC-code)
-- Tips & Tricks
+- Tips & Tricks (JC)
   - Accessibility
-- Resources
+- Resources (JC)
 - Questions
