@@ -335,13 +335,12 @@ Build a widget!
 
 ## Additional Resources
 
-- [Widget Development](http://developers.arcgis.com/javascript/latest/guide/custom-widget/index.html)
-- [TypeScript Tutorial](https://www.typescriptlang.org/docs/tutorial.html)
+- [Styling](https://developers.arcgis.com/javascript/latest/guide/styling/index.html)
 - [Implementing Accessor](https://developers.arcgis.com/javascript/latest/guide/implementing-accessor/index.html)
-- [`esri/core/accessorSupport/decorators`](https://developers.arcgis.com/javascript/latest/api-reference/esri-core-accessorSupport-decorators.html)
-- [`esri/widgets/support/widget`](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-support-widget.html)
+- [Setting up TypeScript](https://developers.arcgis.com/javascript/latest/guide/typescript-setup/index.html)
+- [Widget Development](https://developers.arcgis.com/javascript/latest/guide/custom-widget/index.html)
 - [JavaScript Sessions at DevSummit](https://devsummit.schedule.esri.com/#search/sessions/q:javascript)
-- [Documentation - 4.0 beta](https://developers.arcgis.com/javascript/beta/)
+- [Documentation - 4.3](https://developers.arcgis.com/javascript/)
 
 <img src="images/additional.gif" width="200">
 
