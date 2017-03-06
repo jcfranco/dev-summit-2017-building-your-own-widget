@@ -153,7 +153,7 @@ interface Presenter extends Person {
 
 ---
 
-# Decorators!
+# Decorators
 
 - Enhance classes, properties, methods, parameters
 
@@ -192,18 +192,107 @@ class Foo extends declared(Accessor) {
 
 ---
 
-# TypeScript + JS API 4
+# TypeScript + JS API 4 Setup
 
-- Set up TS
-- JavaScript API typings
+- Install TypeScript
+- Install JavaScript API typings
+- Start writing code!
+
+Demo Time
 
 ---
 
-# Key `Accessor` decorators
+# Let's see some widget decorators
 
-- `subclass`
-- `declared`
-- `property`
+<img src="images/decorators.gif" width="600">
+
+---
+
+# Creating a class
+
+## `@subclass` + `declared`
+
+```ts
+@subclass("example.Foo")
+class Foo extends declared(Accessor) {
+  // ...
+}
+
+```
+
+---
+
+# Defining a property
+
+## `@property`
+
+```ts
+// read-only
+@property({ readOnly: true })
+foo = new Foo();
+
+// aliased
+@property({ aliasOf: "foo" })
+bar;
+
+// autocast
+@property({ type: SomeClass })
+baz;
+```
+
+---
+
+# Alias a property
+
+## `@aliasOf`
+
+```ts
+@aliasOf("bar.baz")
+foo;
+```
+
+**Same as**
+
+```
+@property({
+  aliasOf: "bar.baz"
+})
+foo;
+```
+
+---
+
+# Handle click and key events
+
+## `@accessibleHandler`
+
+```ts
+@accessibleHandler
+private function _doSomething() {
+  // ...
+}
+```
+
+---
+
+# Rendering when properties change
+
+## `@renderable`
+
+```ts
+@property()
+@renderable()
+title = "hello";
+```
+
+```ts
+@property()
+@renderable([
+  "viewModel.foo",
+  "viewModel.bar"
+])
+viewModel = new ViewModel();
+```
 
 ---
 
