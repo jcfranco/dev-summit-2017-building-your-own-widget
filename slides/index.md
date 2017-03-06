@@ -327,6 +327,7 @@ Build a widget!
 # Tips & Tricks
 
 - collections
+- Accessibility
 
 <img src="images/tricks.gif" width="400">
 

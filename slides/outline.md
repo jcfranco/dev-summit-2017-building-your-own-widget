@@ -1,11 +1,11 @@
 # Outline
 
-- Agenda
-- About Widgets
-- Prereqs
-  - TypeScript
-  - Accessor
-- Widget framework
+- Agenda (Matt)
+- About Widgets (Matt)
+- Prereqs (Matt)
+- Accessor (JC)
+- TypeScript (JC)
+- Widget framework (Matt)
   - About
   - JSX
   - Lifecycle
@@ -16,10 +16,10 @@
   - Methods
   - Events
   - i18n
-- Theming
+- Theming (Matt)
   - Sass
   - BEM
-- Build Widget
+- Build Widget (Matt - index/sass)(JC-code)
 - Tips & Tricks
   - Accessibility
 - Resources
