@@ -427,6 +427,14 @@ Build a widget!
 
 ---
 
+## Suggested Sessions
+
+- [Building Classes Using Accessor and the ArcGIS API for JavaScript](https://devsummitps17.schedule.esri.com/session-catalog/234004588)
+- [Using TypeScript with ArcGIS API for Javascript](https://devsummitps17.schedule.esri.com/session-catalog/685861044)
+- [Deep Dive on How ArcGIS API for JavaScript Widgets Were Built](https://devsummitps17.schedule.esri.com/session-catalog/108875117)
+
+---
+
 ## Additional Resources
 
 - [Styling](https://developers.arcgis.com/javascript/latest/guide/styling/index.html)
