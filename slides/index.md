@@ -116,7 +116,7 @@ view.watch("stationary, interacting", handleViewPropChange);
 
 ---
 
-# TS = type safety
+# Type safety
 
 ```ts
 let view: MapView | SceneView;
@@ -134,7 +134,7 @@ view = "not-a-view";
 
 ---
 
-# Typings!
+# Typings
 
 Help describe what things are:
 
@@ -153,9 +153,53 @@ interface Presenter extends Person {
 
 ---
 
-# Decorators
+# JS of the future, now
 
-- Enhance classes, properties, methods, parameters
+Fat arrow functions
+
+```
+const someFn = () => { /* ... */ };
+
+// vs
+
+const someFn = function () { /* ... */ }.bind(this);
+```
+
+---
+
+# JS of the future, now
+
+Template strings
+
+```
+const text = `Hello. Nice to meet you, ${user.name}.`;
+
+// vs
+
+const text = "Hello. Nice to meet you, " + user.name + ".";
+```
+
+---
+
+# JS of the future, now
+
+Destructuring
+
+```
+const { map, zoom, scale } = view;
+
+// vs
+
+const map = view.map;
+const zoom = view.zoom;
+const scale = view.scale;
+```
+
+---
+
+# JS of the future, now
+
+Decorators
 
 ```ts
 class Foo extends declared(Accessor) {
@@ -355,13 +399,38 @@ viewModel = new ViewModel();
 
 # Framework: ViewModels
 
-todo: matt
+(The brain)
+
+- Core logic of widget resides here
+- Provides necessary APIs for the view to do it's thing
+- No DOM/UI concerns (think business logic)
+
+---
+
+# ViewModels: Why?
+
+- Framework integration
+- Reusability
+- Separates concerns
 
 ---
 
 # Framework: Views
 
-todo: matt
+# Views
+
+(The face)
+
+- `esri/widgets/Widget`
+- Uses ViewModel APIs to render the UI
+- View-specific logic resides here
+
+---
+
+# Views: Why?
+
+- Separates concerns
+- Framework compatibility
 
 ---
 
@@ -399,13 +468,47 @@ todo: matt
 
 # Theming: SASS
 
-todo: matt
+- CSS preprocessor
+- Variables
+- `@mixin` (group statements)
+- `@include` - (use mixins)
+- `@impor`t
+- `@extend` - (inheritance)
+- More power!
+
+---
+
+# SASS makes it easier to...
+
+- Restyle
+- Theme
+- Modular / DRY
+- Be organized
+- Write less code :)
 
 ---
 
 # Theming: BEM
 
-todo: matt
+- Uses delimiters to separate block, element, modifiers
+- Provides semantics (albeit verbose)
+- Keeps specificity low
+- Scopes styles to blocks
+
+```css
+/* block */
+.example-widget {}
+
+/* block__element */
+.example-widget__input {}
+.example-widget__submit {}
+
+/* block--modifier */
+.example-widget--loading {}
+
+/* block__element--modifier */
+.example-widget__submit--disabled {}
+```
 
 ---
 
@@ -419,7 +522,7 @@ Build a widget!
 
 # Tips & Tricks
 
-- collections
+- Collections
 - Accessibility
 - i18n
 
