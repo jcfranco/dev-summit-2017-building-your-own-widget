@@ -1,0 +1,21 @@
+{
+  "compilerOptions": {
+    "module": "amd",
+    "noImplicitAny": true,
+    "sourceMap": true,
+    "jsx": "react",
+    "reactNamespace": "jsxFactory",
+    "target": "es5",
+    "experimentalDecorators": true,
+    "preserveConstEnums": true,
+    "suppressImplicitAnyIndexErrors": true
+  },
+  "include": [
+    "**/*",
+    "../typings/*",
+    "../node_modules/@types/*"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
+}

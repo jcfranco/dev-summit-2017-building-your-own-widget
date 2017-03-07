@@ -11,10 +11,11 @@
     "suppressImplicitAnyIndexErrors": true
   },
   "include": [
-    "./**/*",
-    "./node_modules/@types/*"
+    "**/*",
+    "../typings/*",
+    "../node_modules/@types/*"
   ],
   "exclude": [
-    "./node_modules"
+    "node_modules"
   ]
 }
