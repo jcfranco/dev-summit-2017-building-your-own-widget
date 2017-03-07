@@ -472,7 +472,7 @@ todo: matt
 - Variables
 - `@mixin` (group statements)
 - `@include` - (use mixins)
-- `@impor`t
+- `@import`
 - `@extend` - (inheritance)
 - More power!
 
