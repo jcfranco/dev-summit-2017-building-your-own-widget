@@ -44,6 +44,8 @@ function wrapCommands(commands: VoiceCommands): WrappedVoiceCommands {
   return wrapped;
 }
 
+const _coldword = "cancel";
+
 @subclass("esri.demo.YoEsri.support.SpeechRecognizer")
 class SpeechRecognizer extends declared(Accessor) {
 
@@ -95,13 +97,15 @@ class SpeechRecognizer extends declared(Accessor) {
     annyang.addCallback("resultMatch", (userSaid, commandText) => {
       if (commandText === this.hotword) {
         this._wake();
-
         this._set("state", "listening");
 
-        this._startActivationTimeout(() => {
-          this._set("state", "active");
-          this._sleep()
-        });
+        this._startActivationTimeout(this.sleep);
+
+        return;
+      }
+
+      if (commandText === _coldword) {
+        this.sleep();
 
         return;
       }
@@ -148,6 +152,10 @@ class SpeechRecognizer extends declared(Accessor) {
   private _hotwordCommand: VoiceCommands;
 
   private _wrappedCommands: WrappedVoiceCommands;
+
+  private _coldwordCommand: VoiceCommands = {
+    [_coldword]: noop
+  };
 
   //--------------------------------------------------------------------------
   //
@@ -196,6 +204,11 @@ class SpeechRecognizer extends declared(Accessor) {
     annyang.trigger(hotwordSansSpecialChars);
   }
 
+  sleep(): void {
+    this._set("state", "active");
+    this._sleep();
+  }
+
   //--------------------------------------------------------------------------
   //
   //  Private Methods
@@ -204,11 +217,15 @@ class SpeechRecognizer extends declared(Accessor) {
 
   private _wake(): void {
     annyang.removeCommands(this.hotword);
+
     annyang.addCommands(this._wrappedCommands);
+    annyang.addCommands(this._coldwordCommand);
   }
 
   private _sleep(): void {
     annyang.removeCommands(Object.keys(this._wrappedCommands));
+    annyang.removeCommands(Object.keys(_coldword));
+
     annyang.addCommands(this._hotwordCommand);
   }
 

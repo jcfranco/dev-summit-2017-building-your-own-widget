@@ -102,6 +102,10 @@ class YoEsriViewModel extends declared(Accessor) {
     this.recognizer.wake();
   }
 
+  sleep(): void {
+    this.recognizer.sleep();
+  }
+
 }
 
 export = YoEsriViewModel;

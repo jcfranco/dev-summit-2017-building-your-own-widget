@@ -132,7 +132,14 @@ class YoEsri extends declared(Widget) {
 
   @accessibleHandler()
   private _wake(): void {
-    this.viewModel.wake();
+    const vm = this.viewModel;
+
+    if (vm.state === "listening") {
+      vm.sleep();
+    }
+    else {
+      vm.wake();
+    }
   }
 
 }
