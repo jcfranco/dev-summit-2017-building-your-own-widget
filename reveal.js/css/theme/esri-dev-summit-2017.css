@@ -281,7 +281,7 @@ body {
 }
 
 .reveal a:hover {
-  color: #77cfeb;
+  color: #eee;
   text-shadow: none;
   border: none;
 }
@@ -306,6 +306,7 @@ body {
 .reveal section img.plain {
   border: 0;
   box-shadow: none;
+  background: none;
 }
 
 .reveal a img {

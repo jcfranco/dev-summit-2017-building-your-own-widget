@@ -600,7 +600,7 @@ viewModel: MyViewModel = new MyViewModel();
 - `@extend` - (inheritance)
 - More power!
 
-<a href="http://sass-lang.com/"><img src="images/sass-black.png" width="300" style="border:none; box-shadow:none; background: none;"></a>
+<a href="http://sass-lang.com/"><img class="plain" src="images/sass-black.png" width="300"></a>
 
 ---
 
