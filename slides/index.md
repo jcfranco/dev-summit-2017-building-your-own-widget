@@ -413,10 +413,13 @@ postInitialize() {
 
 # `render()`
 
+- Return JSX
+- Virtual DOM
+
 ```
 render() {
   return (
-    <button>My Button</button>
+    <button>{this.myButtonName}</button>
   );
 }
 ```
