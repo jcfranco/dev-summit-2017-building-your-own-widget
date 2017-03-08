@@ -435,13 +435,70 @@ destroy() {
 
 ---
 
-# Framework: Properties
+# Framework: Getting/Setting Properties
 
-// todo
+```
+// normal setting of a prop
+myWidget.property = value;
+```
 
-  - set()
-  - get()
-  - vmEvent
+```
+// normal getting of a prop
+console.log(myWidget.property);
+```
+
+```
+// internal set property
+// will not trigger setter
+this._set("property", propertyValue);
+```
+
+```
+// internal get property
+// will not trigger getter
+this._get("property");
+```
+
+---
+
+# Framework: Internal set
+
+```
+set myProperty(value: string) {
+  this._set("myProperty", myProperty || "default value");
+}
+```
+
+---
+
+# Framework: Internal get
+
+```
+get myProperty() {
+  const myProperty = this._get("myProperty");
+  return myProperty || "default value";
+}
+```
+
+---
+
+# Framework: View Events
+
+ViewModel: emit event
+
+```
+this.emit("my-event", {});
+```
+
+View: Alias event from ViewModel
+
+```
+@vmEvent("my-event")
+@property({
+  type: MyViewModel
+})
+viewModel: MyViewModel = new MyViewModel();
+```
 
 ---
 
@@ -452,6 +509,8 @@ destroy() {
 - Core logic of widget resides here
 - Provides necessary APIs for the view to do it's thing
 - No DOM/UI concerns (think business logic)
+
+<img src="images/brain.gif" width="250">
 
 ---
 
@@ -472,6 +531,8 @@ destroy() {
 - `esri/widgets/Widget`
 - Uses ViewModel APIs to render the UI
 - View-specific logic resides here
+
+<img src="images/view.gif" width="250">
 
 ---
 
