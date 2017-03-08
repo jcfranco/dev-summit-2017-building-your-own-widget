@@ -36,7 +36,7 @@
 
 # Prerequisites
 
-- Accessor
+- Accessor (`esri/core/Accessor`)
 - TypeScript
 
 <img src="images/holdup.gif" width="400">
@@ -139,7 +139,7 @@ view = "not-a-view";
 Help describe what things are:
 
 ```ts
-type PresenterNames = "Alan" | "Matt" | "JC";
+type PresenterName = "Alan" | "Matt" | "JC";
 
 interface Person {
   name: string;
@@ -147,7 +147,7 @@ interface Person {
 }
 
 interface Presenter extends Person {
-  name: PresenterNames;
+  name: PresenterName;
 }
 ```
 
@@ -364,35 +364,83 @@ viewModel = new ViewModel();
 # Framework: JSX
 
 - JavaScript extension **syntax**
+- preprocessor
+- adds XML syntax to JavaScript
 - Looks similar to HTML
+- faster, easier, safer
 - Can use JS inline!
 
 ```xml
-<div class={classLookup.hello} onclick={this._handleClick}
-     tabIndex={0}>Hello</div>
+<div class={classLookup.hello}
+  onclick={this._handleClick}
+  tabIndex={0}>
+Hello
+</div>
 ```
 
 ---
 
 # Framework: Lifecycle
 
-  - constructor
-  - postInitialize
-  - render
-  - destroy
+  - `constructor()`
+  - `postInitialize()`
+  - `render()`
+  - `destroy()`
+
+---
+
+# `constructor()`
+
+```
+constructor(params?: any) {
+  super();
+}
+```
+
+---
+
+# `postInitialize()`
+
+```
+postInitialize() {
+    this.own(
+      watchUtils.on(this, "property", => this._propertyChanged)
+    );
+}
+```
+
+---
+
+# `render()`
+
+```
+render() {
+  return (
+    <button>My Button</button>
+  );
+}
+```
+
+---
+
+# `destroy()`
+
+```
+destroy() {
+  // cleanup listeners
+  // destroy other widgets
+  // etc.
+}
+```
 
 ---
 
 # Framework: Properties
 
-  - watching
-  - renderable
-  - Types
-  - dependsOn
-  - readOnly
+// todo
+
   - set()
   - get()
-  - aliasOf
   - vmEvent
 
 ---
@@ -448,6 +496,7 @@ todo: matt
 
 # Theming
 
+// todo
 - How to style widgets
 - Out of the box themes
 - SASS
@@ -459,7 +508,7 @@ todo: matt
 
 # Theming: Out of the box
 
-todo: matt
+// todo
 [Styles](https://developers.arcgis.com/javascript/latest/guide/styling/index.html)
 
 <img src="images/outofbox.gif" width="300">
@@ -468,6 +517,7 @@ todo: matt
 
 # Theming: SASS
 
+// todo
 - CSS preprocessor
 - Variables
 - `@mixin` (group statements)
@@ -480,6 +530,7 @@ todo: matt
 
 # SASS makes it easier to...
 
+// todo
 - Restyle
 - Theme
 - Modular / DRY
@@ -490,6 +541,7 @@ todo: matt
 
 # Theming: BEM
 
+// todo
 - Uses delimiters to separate block, element, modifiers
 - Provides semantics (albeit verbose)
 - Keeps specificity low
