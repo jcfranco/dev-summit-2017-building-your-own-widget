@@ -482,26 +482,6 @@ get myProperty() {
 
 ---
 
-# Framework: View Events
-
-ViewModel: emit event
-
-```
-this.emit("my-event", {});
-```
-
-View: Alias event from ViewModel
-
-```
-@vmEvent("my-event")
-@property({
-  type: MyViewModel
-})
-viewModel: MyViewModel = new MyViewModel();
-```
-
----
-
 # Framework: ViewModels
 
 (The brain)
@@ -545,20 +525,47 @@ viewModel: MyViewModel = new MyViewModel();
 
 # Framework: Methods
 
-todo: matt
+Public Methods
+
+```
+public myMethod() {}
+```
+
+Private Methods
+
+```
+private _myMethod() {}
+```
 
 ---
 
-# Framework: Events
+# Framework: ViewModel Events
 
-todo: matt
+ViewModel: emit event
+
+```
+this.emit("my-event", {});
+```
+
+---
+
+# Framework: View Events
+
+View: Alias event from ViewModel
+
+```
+@vmEvent("my-event")
+@property({
+  type: MyViewModel
+})
+viewModel: MyViewModel = new MyViewModel();
+```
 
 ---
 
 # Theming
 
-// todo
-- How to style widgets
+- Guide for styling
 - Out of the box themes
 - SASS
 - BEM
@@ -567,10 +574,16 @@ todo: matt
 
 ---
 
+# Theming: Guide
+
+[SDK Guide: Styles](https://developers.arcgis.com/javascript/latest/guide/styling/index.html)
+
+---
+
 # Theming: Out of the box
 
-// todo
-[Styles](https://developers.arcgis.com/javascript/latest/guide/styling/index.html)
+
+[Themes Demo](https://jsbin.com/sogitog/edit?html,output)
 
 <img src="images/outofbox.gif" width="300">
 
