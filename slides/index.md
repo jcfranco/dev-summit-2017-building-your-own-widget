@@ -578,10 +578,11 @@ viewModel: MyViewModel = new MyViewModel();
 
 [SDK Guide: Styles](https://developers.arcgis.com/javascript/latest/guide/styling/index.html)
 
+![styling sdk](images/styling-sdk.png)
+
 ---
 
 # Theming: Out of the box
-
 
 [Themes Demo](https://jsbin.com/sogitog/edit?html,output)
 
@@ -591,7 +592,6 @@ viewModel: MyViewModel = new MyViewModel();
 
 # Theming: SASS
 
-// todo
 - CSS preprocessor
 - Variables
 - `@mixin` (group statements)
@@ -600,11 +600,12 @@ viewModel: MyViewModel = new MyViewModel();
 - `@extend` - (inheritance)
 - More power!
 
+<a href="http://sass-lang.com/"><img src="images/sass-black.png" width="300" style="border:none; box-shadow:none; background: none;"></a>
+
 ---
 
 # SASS makes it easier to...
 
-// todo
 - Restyle
 - Theme
 - Modular / DRY
@@ -615,7 +616,6 @@ viewModel: MyViewModel = new MyViewModel();
 
 # Theming: BEM
 
-// todo
 - Uses delimiters to separate block, element, modifiers
 - Provides semantics (albeit verbose)
 - Keeps specificity low
