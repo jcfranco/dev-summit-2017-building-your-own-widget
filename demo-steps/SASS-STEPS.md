@@ -10,13 +10,22 @@ $icon_fill: #fff;
 $listening_bg: #7e4cde;
 ```
 
+## Add Mixin
+
+```
+@mixin flex {
+  display: -webkit-flex;
+  display: flex;
+}
+```
+
 ## Add Widget base class
 
 ```
 .demo-yo-esri {
   width: $button_size;
   height: $button_size;
-  display: flex;
+  @include flex;
   border-radius: $button_radius;
   justify-content: center;
   align-items: center;
@@ -64,10 +73,15 @@ $button_radius: 20px;
 $icon_fill: #fff;
 $listening_bg: #7e4cde;
 
+@mixin flex {
+  display: -webkit-flex;
+  display: flex;
+}
+
 .demo-yo-esri {
   width: $button_size;
   height: $button_size;
-  display: flex;
+  @include flex;
   border-radius: $button_radius;
   justify-content: center;
   align-items: center;

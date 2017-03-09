@@ -1,6 +1,7 @@
 .demo-yo-esri {
   width: 40px;
   height: 40px;
+  display: -webkit-flex;
   display: flex;
   border-radius: 20px;
   justify-content: center;
