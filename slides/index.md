@@ -446,7 +446,6 @@ viewModel = new ViewModel();
 # Widget Framework: [JSX](https://facebook.github.io/react/docs/introducing-jsx.html)
 
 - JavaScript extension **syntax**
-- preprocessor
 - adds XML syntax to JavaScript
 - Looks similar to HTML
 - Can use JS inline!
@@ -599,7 +598,7 @@ viewModel: MyViewModel = new MyViewModel();
 
 ---
 
-# Widget Framework: Methods
+# Widget Framework: Method Convention
 
 Public Methods
 
