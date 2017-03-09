@@ -588,9 +588,7 @@ viewModel: MyViewModel = new MyViewModel();
 
 # Theming: Out of the box
 
-todo: matt. make a dropdown select menu to switch easily
-
-[Themes Demo](https://jsbin.com/sogitog/edit?html,output)
+[Themes Demo](https://jcfranco.github.io/dev-summit-2017-building-your-own-widget/demos/themes/)
 
 <img src="images/outofbox.gif" width="300">
 
