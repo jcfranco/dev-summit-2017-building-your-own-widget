@@ -59,7 +59,7 @@ define(["require", "exports", "esri/core/accessorSupport/decorators", "esri/core
             //----------------------------------
             //  hotword
             //----------------------------------
-            _this.hotword = "Yo (Esri)";
+            _this.hotword = "listen";
             //----------------------------------
             //  hotwordTimeoutInMs
             //----------------------------------

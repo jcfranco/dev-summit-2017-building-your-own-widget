@@ -167,7 +167,7 @@ class SpeechRecognizer extends declared(Accessor) {
   //----------------------------------
 
   @property()
-  hotword = "Yo (Esri)";
+  hotword = "listen";
 
   //----------------------------------
   //  hotwordTimeoutInMs
