@@ -669,8 +669,8 @@ viewModel: MyViewModel = new MyViewModel();
 
 # Widget Theming
 
-- SDK: Styling topic
 - Out of the box themes
+- SDK: Styling topic
 - [Sass](http://sass-lang.com/)
 - [BEM](http://getbem.com/)
 
@@ -680,7 +680,7 @@ viewModel: MyViewModel = new MyViewModel();
 
 # Widget Theming: Guide
 
-[SDK Guide: Styles](https://developers.arcgis.com/javascript/latest/guide/styling/index.html)
+- [SDK Guide: Styles](https://developers.arcgis.com/javascript/latest/guide/styling/index.html)
 
 ![styling sdk](images/styling-sdk.png)
 
@@ -722,7 +722,8 @@ viewModel: MyViewModel = new MyViewModel();
 
 # Sass Install
 
-[Installing Sass](http://sass-lang.com/install)
+- [Installing Sass](http://sass-lang.com/install)
+- [Themes source on Github](https://github.com/Esri/jsapi-resources/blob/master/4.x/bower/dojo/SASS.md)
 
 ---
 
