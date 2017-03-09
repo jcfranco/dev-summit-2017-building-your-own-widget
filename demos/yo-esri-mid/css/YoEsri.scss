@@ -1,8 +1,3 @@
-# Sass
-
-## Add Sass
-
-```
 $icon_size: 24px;
 $button_size: 40px;
 $button_radius: 20px;
@@ -34,16 +29,3 @@ $listening_bg: #7e4cde;
     cursor: auto;
   }
 }
-
-```
-
-## Compile Sass
-
-```
-cd ~/Sites/git/presentations-devsummit-2017/building-your-own-widget/demos/yo-esri-start/css/
-```
-
-```
-sass YoEsri.scss YoEsri.css
-```
-

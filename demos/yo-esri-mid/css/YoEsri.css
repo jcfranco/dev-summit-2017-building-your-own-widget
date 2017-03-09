@@ -1,0 +1,22 @@
+.demo-yo-esri {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  border-radius: 20px;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: background-color 0.3s, fill 0.3s; }
+  .demo-yo-esri__icon {
+    width: 24px;
+    height: 24px;
+    transition: all 0.15s ease-in-out; }
+  .demo-yo-esri--listening {
+    background-color: #7e4cde; }
+    .demo-yo-esri--listening .demo-yo-esri__icon {
+      fill: #fff; }
+  .demo-yo-esri--disabled {
+    opacity: 0.5;
+    cursor: auto; }
+
+/*# sourceMappingURL=YoEsri.css.map */
