@@ -116,6 +116,10 @@ type State = "disabled" | "active" | "listening" | "processing";
   wake(): void {
     this.recognizer.wake();
   }
+
+  sleep(): void {
+    this.recognizer.sleep();
+  }
 ```
 
 ## Lifecycle
@@ -297,7 +301,14 @@ const CSS = {
 
   @accessibleHandler()
   private _wake(): void {
-    this.viewModel.wake();
+    const vm = this.viewModel;
+
+    if (vm.state === "listening") {
+      vm.sleep();
+    }
+    else {
+      vm.wake();
+    }
   }
 ```
 
