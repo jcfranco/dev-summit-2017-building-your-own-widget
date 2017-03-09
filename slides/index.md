@@ -280,7 +280,7 @@ class Foo extends declared(Accessor) {
 interface Foo extends Bar, Baz {}
 
 @subclass("example.Foo")
-class Foo extends declared(Accessor, Bar, Baz) implements Foo {
+class Foo extends declared(Accessor, Bar, Baz) {
   // ...
 }
 ```
@@ -417,8 +417,8 @@ viewModel = new ViewModel();
 
 # More details in the SDK
 
- [Implementing Accessor](https://developers.arcgis.com/javascript/latest/guide/implementing-accessor/index.html)
- [Widget Development](https://developers.arcgis.com/javascript/latest/guide/custom-widget/index.html#)
+* [Implementing Accessor](https://developers.arcgis.com/javascript/latest/guide/implementing-accessor/index.html)
+* [Widget Development](https://developers.arcgis.com/javascript/latest/guide/custom-widget/index.html#)
 
 ---
 
