@@ -31,6 +31,7 @@ define(["require", "exports", "esri/core/accessorSupport/decorators", "esri/core
         });
         return wrapped;
     }
+    var _coldword = "cancel";
     var SpeechRecognizer = (function (_super) {
         __extends(SpeechRecognizer, _super);
         //--------------------------------------------------------------------------
@@ -47,6 +48,9 @@ define(["require", "exports", "esri/core/accessorSupport/decorators", "esri/core
             //--------------------------------------------------------------------------
             _this._activationTimeoutId = null;
             _this._handles = [];
+            _this._coldwordCommand = (_a = {},
+                _a[_coldword] = noop,
+                _a);
             //--------------------------------------------------------------------------
             //
             //  Properties
@@ -69,6 +73,7 @@ define(["require", "exports", "esri/core/accessorSupport/decorators", "esri/core
             //----------------------------------
             _this.state = "active";
             return _this;
+            var _a;
         }
         SpeechRecognizer.prototype.initialize = function () {
             var _this = this;
@@ -101,10 +106,11 @@ define(["require", "exports", "esri/core/accessorSupport/decorators", "esri/core
                 if (commandText === _this.hotword) {
                     _this._wake();
                     _this._set("state", "listening");
-                    _this._startActivationTimeout(function () {
-                        _this._set("state", "active");
-                        _this._sleep();
-                    });
+                    _this._startActivationTimeout(_this.sleep);
+                    return;
+                }
+                if (commandText === _coldword) {
+                    _this.sleep();
                     return;
                 }
                 _this._set("state", "processing");
@@ -137,6 +143,10 @@ define(["require", "exports", "esri/core/accessorSupport/decorators", "esri/core
             var hotwordSansSpecialChars = this.hotword.replace(/\W/g, "");
             annyang.trigger(hotwordSansSpecialChars);
         };
+        SpeechRecognizer.prototype.sleep = function () {
+            this._set("state", "active");
+            this._sleep();
+        };
         //--------------------------------------------------------------------------
         //
         //  Private Methods
@@ -145,9 +155,11 @@ define(["require", "exports", "esri/core/accessorSupport/decorators", "esri/core
         SpeechRecognizer.prototype._wake = function () {
             annyang.removeCommands(this.hotword);
             annyang.addCommands(this._wrappedCommands);
+            annyang.addCommands(this._coldwordCommand);
         };
         SpeechRecognizer.prototype._sleep = function () {
             annyang.removeCommands(Object.keys(this._wrappedCommands));
+            annyang.removeCommands(Object.keys(_coldword));
             annyang.addCommands(this._hotwordCommand);
         };
         SpeechRecognizer.prototype._startActivationTimeout = function (timeoutCallback) {

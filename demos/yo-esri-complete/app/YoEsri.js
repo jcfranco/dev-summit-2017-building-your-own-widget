@@ -77,7 +77,13 @@ define(["require", "exports", "esri/core/accessorSupport/decorators", "esri/widg
                     widget_1.jsxFactory.createElement("animateTransform", { attributeType: "xml", attributeName: "transform", type: "rotate", from: "0 25 25", to: "360 25 25", dur: "0.6s", repeatCount: "indefinite" }))));
         };
         YoEsri.prototype._wake = function () {
-            this.viewModel.wake();
+            var vm = this.viewModel;
+            if (vm.state === "listening") {
+                vm.sleep();
+            }
+            else {
+                vm.wake();
+            }
         };
         return YoEsri;
     }(decorators_1.declared(Widget)));

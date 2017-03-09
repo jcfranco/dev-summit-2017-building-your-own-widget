@@ -54,6 +54,9 @@ define(["require", "exports", "esri/core/accessorSupport/decorators", "esri/core
         YoEsriViewModel.prototype.wake = function () {
             this.recognizer.wake();
         };
+        YoEsriViewModel.prototype.sleep = function () {
+            this.recognizer.sleep();
+        };
         return YoEsriViewModel;
     }(decorators_1.declared(Accessor)));
     __decorate([
