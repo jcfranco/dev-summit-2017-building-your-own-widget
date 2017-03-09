@@ -222,13 +222,12 @@ class Foo extends declared(Accessor) {
 
 # TypeScript IDE Support
 
-- Visual Studio
-  - 2015/2013
-  - Code
+- Visual Studio: 2015/2013, Code
 - WebStorm
 - Sublime Text
 - Atom
 - Eclipse
+- Brackets
 - Emacs
 - Vim
 
@@ -374,7 +373,7 @@ viewModel = new ViewModel();
 <div class={classLookup.hello}
   onclick={this._handleClick}
   tabIndex={0}>
-Hello
+  Hello World
 </div>
 ```
 
@@ -394,6 +393,7 @@ Hello
 ```
 constructor(params?: any) {
   super();
+  // Do some stuff!
 }
 ```
 
@@ -419,7 +419,7 @@ postInitialize() {
 ```
 render() {
   return (
-    <button>{this.myButtonName}</button>
+    <button>{this.title}</button>
   );
 }
 ```
@@ -433,53 +433,6 @@ destroy() {
   // cleanup listeners
   // destroy other widgets
   // etc.
-}
-```
-
----
-
-# Framework: Getting/Setting Properties
-
-```
-// normal setting of a prop
-myWidget.property = value;
-```
-
-```
-// normal getting of a prop
-console.log(myWidget.property);
-```
-
-```
-// internal set property
-// will not trigger setter
-this._set("property", propertyValue);
-```
-
-```
-// internal get property
-// will not trigger getter
-this._get("property");
-```
-
----
-
-# Framework: Internal set
-
-```
-set myProperty(value: string) {
-  this._set("myProperty", myProperty || "default value");
-}
-```
-
----
-
-# Framework: Internal get
-
-```
-get myProperty() {
-  const myProperty = this._get("myProperty");
-  return myProperty || "default value";
 }
 ```
 
@@ -542,20 +495,48 @@ private _myMethod() {}
 
 ---
 
-# Framework: ViewModel Events
+# Framework: Events
 
-// todo: talk about views have emit, viewmodels need to require evented
-ViewModel: emit event
-
-```
-this.emit("my-event", {});
-```
+- Views have ability to `emit()` an event.
+- ViewModel needs to import `dojo/evented` in order to `emit()`
+- Views can alias an event with `vmEvent` decorator.
 
 ---
 
 # Framework: View Events
 
-View: Alias event from ViewModel
+- Widget views extend `esri/core/Evented`
+
+```
+this.emit("my-event", {...});
+```
+
+---
+
+# Framework: ViewModel Events
+
+#### 1. Import evented
+
+```
+import Evented = require("esri/core/Evented");
+```
+
+#### 2. Extend Evented
+
+```
+interface MyViewModel extends Evented {
+  ...
+}
+```
+
+#### 3. Emit event when necessary
+```
+this.emit("my-event", {...});
+```
+
+---
+
+# Framework: Aliased View Events
 
 ```
 @vmEvent("my-event")
@@ -569,10 +550,10 @@ viewModel: MyViewModel = new MyViewModel();
 
 # Theming
 
-- Guide for styling
+- SDK: Styling topic
 - Out of the box themes
-- SASS
-- BEM
+- [SASS](http://sass-lang.com/)
+- [BEM](http://getbem.com/)
 
 <img src="images/theming.gif" width="400">
 
@@ -616,10 +597,14 @@ viewModel: MyViewModel = new MyViewModel();
 - Be organized
 - Write less code :)
 
+![styling sdk](images/coolcat.gif)
+
 ---
 
 # Theming: BEM
 
+- [BEM](http://getbem.com/): Block Element Modifier
+- Methodology to create reusable components
 - Uses delimiters to separate block, element, modifiers
 - Provides semantics (albeit verbose)
 - Keeps specificity low
