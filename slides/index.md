@@ -157,10 +157,10 @@ interface Presenter extends Person {
 
 Fat arrow functions
 
-```
+```ts
 const someFn = () => { /* ... */ };
 
-// vs
+// instead of
 
 const someFn = function () { /* ... */ }.bind(this);
 ```
@@ -171,10 +171,10 @@ const someFn = function () { /* ... */ }.bind(this);
 
 Template strings
 
-```
+```ts
 const text = `Hello. Nice to meet you, ${user.name}.`;
 
-// vs
+// instead of
 
 const text = "Hello. Nice to meet you, " + user.name + ".";
 ```
@@ -185,10 +185,10 @@ const text = "Hello. Nice to meet you, " + user.name + ".";
 
 Destructuring
 
-```
+```ts
 const { map, zoom, scale } = view;
 
-// vs
+// instead of
 
 const map = view.map;
 const zoom = view.zoom;
@@ -199,23 +199,31 @@ const scale = view.scale;
 
 # JS of the future, now
 
+Rest Parameters
+
+```ts
+function ignoreFirst(first, ...theRest) {
+  console.log(theRest);
+}
+
+// instead of
+
+function ignoreFirst() {
+  var theRest = Array.prototype.slice.call(arguments, 1);
+
+  console.log(theRest);
+}
+```
+
+---
+
+# JS of the future, now
+
 Decorators
 
 ```ts
-class Foo extends declared(Accessor) {
-
-  // read-only
-  @property({ readOnly: true })
-  foo = new Foo();
-
-  // aliased
-  @property({ aliasOf: "foo" })
-  bar;
-
-  // autocast
-  @property({ type: SomeClass })
-  baz;
-}
+@log()
+foo = "foo";
 ```
 
 ---
@@ -235,13 +243,13 @@ class Foo extends declared(Accessor) {
 
 ---
 
-# TypeScript + JS API 4 Setup
+# TypeScript + JS API 4
 
 - Install TypeScript
 - Install JavaScript API typings
 - Start writing code!
 
-Demo Time
+[TypeScript setup](https://developers.arcgis.com/javascript/latest/guide/typescript-setup/index.html)
 
 ---
 
@@ -260,7 +268,21 @@ Demo Time
 class Foo extends declared(Accessor) {
   // ...
 }
+```
 
+---
+
+# Creating a class: multiple inheritance pattern
+
+## `@subclass` + `declared`
+
+```ts
+interface Foo extends Bar, Baz {}
+
+@subclass("example.Foo")
+class Foo extends declared(Accessor, Bar, Baz) implements Foo {
+  // ...
+}
 ```
 
 ---
@@ -270,17 +292,80 @@ class Foo extends declared(Accessor) {
 ## `@property`
 
 ```ts
-// read-only
-@property({ readOnly: true })
+@property()
 foo = new Foo();
+```
 
-// aliased
-@property({ aliasOf: "foo" })
-bar;
+---
 
-// autocast
-@property({ type: SomeClass })
-baz;
+# Custom getter/setter
+
+## `@property`
+
+```ts
+@property()
+set myProperty(value: string) {
+  this._set("myProperty", value);
+  this._ensureValidity(value);
+}
+```
+
+---
+
+# Read-only value
+
+## `@property`
+
+```ts
+@property({
+  readOnly: true
+})
+myProperty = "I'm read-only";
+```
+
+---
+
+# Computed properties
+
+## `@property`
+
+```ts
+@property({
+  dependsOn: ["firstName, lastName"]
+})
+get fullName() {
+  return `${this.firstName} ${this.lastName}`
+}
+```
+
+---
+
+# Autocast
+
+## `@property`
+
+```ts
+@property({
+  type: MyClass
+})
+myProperty;
+```
+
+```
+instance.myProperty = { /* params */ };
+
+console.log(instance.myProperty instance of MyClass); // true
+```
+
+---
+
+# Alias a property
+
+## `@property`
+
+```
+@property({ aliasOf: "bar.baz" })
+foo;
 ```
 
 ---
@@ -291,15 +376,6 @@ baz;
 
 ```ts
 @aliasOf("bar.baz")
-foo;
-```
-
-**Same as**
-
-```
-@property({
-  aliasOf: "bar.baz"
-})
 foo;
 ```
 
@@ -336,6 +412,13 @@ title = "hello";
 ])
 viewModel = new ViewModel();
 ```
+
+---
+
+# More details in the SDK
+
+ [Implementing Accessor](https://developers.arcgis.com/javascript/latest/guide/implementing-accessor/index.html)
+ [Widget Development](https://developers.arcgis.com/javascript/latest/guide/custom-widget/index.html#)
 
 ---
 
@@ -380,10 +463,10 @@ viewModel = new ViewModel();
 
 # Widget Framework: Lifecycle
 
-  - `constructor()`
-  - `postInitialize()`
-  - `render()`
-  - `destroy()`
+- `constructor()`
+- `postInitialize()`
+- `render()`
+- `destroy()`
 
 ---
 
@@ -402,9 +485,9 @@ constructor(params?: any) {
 
 ```
 postInitialize() {
-    this.own(
-      watchUtils.on(this, "property", => this._propertyChanged)
-    );
+  this.own(
+    watchUtils.on(this, "property", => this._propertyChanged)
+  );
 }
 ```
 
@@ -423,6 +506,8 @@ render() {
 }
 ```
 
+[Widget rendering (SDK)](https://developers.arcgis.com/javascript/latest/guide/custom-widget/index.html#widget-rendering)
+
 ---
 
 # `destroy()`
@@ -431,13 +516,40 @@ render() {
 destroy() {
   // cleanup listeners
   // destroy other widgets
+  // dereference variables
   // etc.
 }
 ```
 
 ---
 
-# Widget Framework: ViewModels
+# Framework: Getting/Setting Properties
+
+```
+// normal setting of a prop
+myWidget.property = value;
+```
+
+```
+// normal getting of a prop
+console.log(myWidget.property);
+```
+
+```
+// internal set property
+// will not trigger setter
+this._set("property", propertyValue);
+```
+
+```
+// internal get property
+// will not trigger getter
+this._get("property");
+```
+
+---
+
+# Framework: ViewModels
 
 (The brain)
 
@@ -646,6 +758,8 @@ viewModel: MyViewModel = new MyViewModel();
 Build a widget!
 
 <img src="images/random.gif" width="400">
+
+[Demo](http://localhost/projects/dev-summit-2017-building-your-own-widget/demos/yo-esri-complete/)
 
 ---
 
