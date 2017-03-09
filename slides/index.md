@@ -625,7 +625,7 @@ private _myMethod() {}
 
 # Widget Framework: View Events
 
-- Widget views extend `esri/core/Evented`
+- Widget views extend `dojo/Evented`
 
 ```
 this.emit("my-event", {...});
@@ -638,7 +638,7 @@ this.emit("my-event", {...});
 #### 1. Import evented
 
 ```
-import Evented = require("esri/core/Evented");
+import Evented = require("dojo/Evented");
 ```
 
 #### 2. Extend Evented
