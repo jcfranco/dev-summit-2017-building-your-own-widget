@@ -760,7 +760,7 @@ Build a widget!
 
 <img src="images/random.gif" width="400">
 
-[Demo](http://localhost/projects/dev-summit-2017-building-your-own-widget/demos/yo-esri-complete/)
+[Demo](https://jcfranco.github.io/dev-summit-2017-building-your-own-widget/demos/yo-esri-complete/)
 
 ---
 
