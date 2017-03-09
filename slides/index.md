@@ -544,6 +544,7 @@ private _myMethod() {}
 
 # Framework: ViewModel Events
 
+// todo: talk about views have emit, viewmodels need to require evented
 ViewModel: emit event
 
 ```
@@ -586,6 +587,8 @@ viewModel: MyViewModel = new MyViewModel();
 ---
 
 # Theming: Out of the box
+
+todo: matt. make a dropdown select menu to switch easily
 
 [Themes Demo](https://jsbin.com/sogitog/edit?html,output)
 
