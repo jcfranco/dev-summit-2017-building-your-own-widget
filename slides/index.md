@@ -341,7 +341,7 @@ viewModel = new ViewModel();
 
 # Widget framework
 
-- JSX
+- [JSX](https://jsx.github.io/)
 - Lifecycle
 - Properties
 - Methods
@@ -349,7 +349,7 @@ viewModel = new ViewModel();
 
 ---
 
-# Framework: About
+# Widget Framework: About
 
 `esri/widgets/Widget`: Our new widget framework
 
@@ -360,7 +360,7 @@ viewModel = new ViewModel();
 
 ---
 
-# Framework: JSX
+# Widget Framework: [JSX](https://jsx.github.io/)
 
 - JavaScript extension **syntax**
 - preprocessor
@@ -379,7 +379,7 @@ viewModel = new ViewModel();
 
 ---
 
-# Framework: Lifecycle
+# Widget Framework: Lifecycle
 
   - `constructor()`
   - `postInitialize()`
@@ -438,7 +438,7 @@ destroy() {
 
 ---
 
-# Framework: ViewModels
+# Widget Framework: ViewModels
 
 (The brain)
 
@@ -458,9 +458,7 @@ destroy() {
 
 ---
 
-# Framework: Views
-
-# Views
+# Widget Framework: Views
 
 (The face)
 
@@ -479,7 +477,18 @@ destroy() {
 
 ---
 
-# Framework: Methods
+# Views: Defining ViewModel
+
+```
+@property({
+  type: MyViewModel
+})
+viewModel: MyViewModel = new MyViewModel();
+```
+
+---
+
+# Widget Framework: Methods
 
 Public Methods
 
@@ -495,7 +504,7 @@ private _myMethod() {}
 
 ---
 
-# Framework: Events
+# Widget Framework: Events
 
 - Views have ability to `emit()` an event.
 - ViewModel needs to import `dojo/evented` in order to `emit()`
@@ -503,7 +512,7 @@ private _myMethod() {}
 
 ---
 
-# Framework: View Events
+# Widget Framework: View Events
 
 - Widget views extend `esri/core/Evented`
 
@@ -513,7 +522,7 @@ this.emit("my-event", {...});
 
 ---
 
-# Framework: ViewModel Events
+# Widget Framework: ViewModel Events
 
 #### 1. Import evented
 
@@ -536,7 +545,7 @@ this.emit("my-event", {...});
 
 ---
 
-# Framework: Aliased View Events
+# Widget Framework: Aliased View Events
 
 ```
 @vmEvent("my-event")
@@ -548,7 +557,7 @@ viewModel: MyViewModel = new MyViewModel();
 
 ---
 
-# Theming
+# Widget Theming
 
 - SDK: Styling topic
 - Out of the box themes
@@ -559,7 +568,7 @@ viewModel: MyViewModel = new MyViewModel();
 
 ---
 
-# Theming: Guide
+# Widget Theming: Guide
 
 [SDK Guide: Styles](https://developers.arcgis.com/javascript/latest/guide/styling/index.html)
 
@@ -567,7 +576,7 @@ viewModel: MyViewModel = new MyViewModel();
 
 ---
 
-# Theming: Out of the box
+# Widget Theming: Out of the box
 
 [Themes Demo](https://jcfranco.github.io/dev-summit-2017-building-your-own-widget/demos/themes/)
 
@@ -575,7 +584,7 @@ viewModel: MyViewModel = new MyViewModel();
 
 ---
 
-# Theming: SASS
+# Widget Theming: SASS
 
 - CSS preprocessor
 - Variables
@@ -601,7 +610,13 @@ viewModel: MyViewModel = new MyViewModel();
 
 ---
 
-# Theming: BEM
+# SASS examples
+
+todo
+
+---
+
+# Widget Theming: BEM
 
 - [BEM](http://getbem.com/): Block Element Modifier
 - Methodology to create reusable components
@@ -642,6 +657,24 @@ Build a widget!
 - i18n
 
 <img src="images/tricks.gif" width="400">
+
+---
+
+# Collections
+
+todo
+
+---
+
+# Accessibility
+
+todo
+
+---
+
+# i18n
+
+todo
 
 ---
 
