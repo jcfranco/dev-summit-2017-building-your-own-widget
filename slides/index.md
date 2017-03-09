@@ -305,22 +305,10 @@ foo = new Foo();
 ```ts
 @property()
 set myProperty(value: string) {
+  // note internal `_set`
   this._set("myProperty", value);
   this._ensureValidity(value);
 }
-```
-
----
-
-# Read-only value
-
-## `@property`
-
-```ts
-@property({
-  readOnly: true
-})
-myProperty = "I'm read-only";
 ```
 
 ---
@@ -336,6 +324,19 @@ myProperty = "I'm read-only";
 get fullName() {
   return `${this.firstName} ${this.lastName}`
 }
+```
+
+---
+
+# Read-only value
+
+## `@property`
+
+```ts
+@property({
+  readOnly: true
+})
+myProperty = "I'm read-only";
 ```
 
 ---
