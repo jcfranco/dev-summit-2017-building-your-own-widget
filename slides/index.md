@@ -670,7 +670,7 @@ Build a widget!
 
 ## [esriurl.com/buildwidgets2017](http://esriurl.com/buildwidgets2017)
 
-<img src="images/source.gif" width="400">
+[![Source Code](images/code.png)](http://esriurl.com/buildwidgets2017)
 
 ---
 
