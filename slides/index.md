@@ -298,7 +298,7 @@ foo = new Foo();
 
 ---
 
-# Custom getter/setter
+# Custom setter
 
 ## `@property`
 
