@@ -20,8 +20,6 @@ export = YoEsriViewModel;
 
 ## Define properties
 
-### Recognizer?
-
 ```ts
 import {
   aliasOf,
